@@ -1,0 +1,56 @@
+.main-container{
+    min-height: 100vh;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(202,248,255,1) 0%, rgba(186,204,227,1) 51.2%, rgba(117,144,179,1) 100.1% );
+}
+.counter-container {
+  text-align: center;
+  padding-top: 130px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #292828;
+}
+
+h2 {
+  font-size: 95px;
+  margin: 20px 0;
+  color: #222;
+}
+
+h2.limit {
+  color: crimson;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #45a049;
+}
+
+button:disabled {
+  background: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.limit-message {
+  color: crimson;
+  font-weight: bold;
+  font-size: 1.1rem;
+}

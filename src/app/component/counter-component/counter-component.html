@@ -1,1 +1,21 @@
-<p>counter-component works!</p>
+<div class="main-container">
+    <p style="margin-left: 1400px;">29/08/2025</p>
+<div class="counter-container">
+  <h1>Counter App</h1>
+
+  <h2 [class.limit]="reachedLimit()">
+    {{ count }}
+  </h2>
+
+  <div class="buttons">
+    <button (click)="increment()" [disabled]="reachedLimit()">+</button>
+    <button (click)="decrement()" [disabled]="count === 0">-</button>
+    <button (click)="reset()" [disabled]="count === 0">Reset</button>
+  </div>
+
+
+  @if (count === maxLimit) {
+    <p class="limit-msg">🎉 You reached the maximum limit!</p>
+  }
+</div>
+</div>
