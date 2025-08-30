@@ -1,1 +1,33 @@
 <p>todo-app-component works!</p>
+<div class="main-container">
+  <div class="todo-container">
+   <div class="header">
+      <img src="icon.png" alt="Logo" class="logo" />
+      <h2>Angular To-Do List</h2>
+      <img src="icon.png" alt="Logo" class="logo" />
+    </div>
+
+    <!-- Add Task -->
+    <input 
+      type="text" 
+      [(ngModel)]="newTask" 
+      placeholder="Enter task..."
+    />
+    <button (click)="addTask()">Add</button>
+
+    <!-- Show tasks -->
+    <ul>
+      <li *ngFor="let todo of todos">
+        <input type="checkbox" [checked]="todo.completed" (click)="toggleComplete(todo)" />
+        <span [ngClass]="{ 'completed': todo.completed }">
+          {{ todo.title }}
+        </span>
+        <button (click)="deleteTask(todo.id)">Delete</button>
+      </li>
+    </ul>
+
+    <!-- No Tasks -->
+    <p *ngIf="todos.length === 0">No tasks yet. Add one!</p>
+  </div>
+
+</div>
