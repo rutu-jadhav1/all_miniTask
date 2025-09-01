@@ -1,1 +1,47 @@
-<p>student-list-component works!</p>
+<div class="container mt-4">
+  <h2 class="text-center mb-4">🎓 Student List</h2>
+
+  <!-- Form -->
+  <div class="card p-3 mb-4 shadow-sm">
+    <div class="row g-3">
+      <div class="col-md-5">
+        <input [(ngModel)]="newName" type="text" class="form-control" placeholder="Enter Student Name" />
+      </div>
+      <div class="col-md-5">
+        <input [(ngModel)]="newCourse" type="text" class="form-control" placeholder="Enter Course" />
+      </div>
+      <div class="col-md-2 d-grid">
+        <button (click)="addStudent()" class="btn btn-success">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Student Table -->
+  <div *ngIf="students.length > 0; else noStudents">
+    <table class="table table-bordered table-striped shadow-sm">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{ student.id }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.course }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm " (click)="deleteStudent(student.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- No Students -->
+  <ng-template #noStudents>
+    <p class="text-center text-muted fs-5">No students available 🚫</p>
+  </ng-template>
+</div>
