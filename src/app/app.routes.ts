@@ -3,6 +3,7 @@ import { TodoAppComponent } from './component/todo-app-component/todo-app-compon
 import { CounterComponent } from './component/counter-component/counter-component';
 import { NavbarComponent } from './component/navbar-component/navbar-component';
 import { StudentListComponent } from './component/student-list-component/student-list-component';
+import { MaterialComponent } from './component/material-component/material-component';
 
 export const routes: Routes = [
 
@@ -26,6 +27,10 @@ export const routes: Routes = [
                     {
                         path: 'studentList',
                         component: StudentListComponent
+                    },
+                    {
+                        path: 'materialComponent',
+                        component: MaterialComponent
                     }
                 ]
     }
