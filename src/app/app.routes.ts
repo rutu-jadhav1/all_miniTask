@@ -6,6 +6,7 @@ import { StudentListComponent } from './component/student-list-component/student
 import { MaterialComponent } from './component/material-component/material-component';
 import { MaterialComponent2 } from './component/material-component2/material-component2';
 import { MaterialComponent3 } from './component/material-component3/material-component3';
+import { MaterialComponent4 } from './component/material-component4/material-component4';
 
 export const routes: Routes = [
 
@@ -41,6 +42,10 @@ export const routes: Routes = [
                     {
                         path:'materialComponent3',
                         component: MaterialComponent3
+                    },
+                    {
+                        path:'materialComponent4',
+                        component: MaterialComponent4
                     }
                 ]
     }
