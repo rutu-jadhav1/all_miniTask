@@ -34,3 +34,70 @@
 </mat-card>
 <hr/>
 <hr/>
+<h1>Auto Complete</h1>
+Control value: {{myControl.value || 'empty'}}
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Number</mat-label>
+    <input #input
+           type="text"
+           placeholder="Pick one"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto"
+           (input)="filter()"
+           (focus)="filter()">
+    <mat-autocomplete requireSelection #auto="matAutocomplete">
+      @for (option of filteredOptions; track option) {
+        <mat-option [value]="option">{{option}}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<hr><hr>
+<h1>Bottom Sheet</h1>
+<p>You have received a file called "cat-picture.jpeg".</p>
+
+<button matButton="elevated" (click)="openBottomSheet()">Open file</button>
+
+<hr><hr>
+<h1>Button</h1>
+<section>
+  <div class="example-label">Filled Buttons</div>
+  <div class="example-button-row">
+    <button matButton="filled">Basic</button>
+    <button matButton="filled" disabled>Disabled</button>
+    <a matButton="filled" href="https://www.google.com/" target="_blank">Link</a>
+  </div>
+</section>
+
+<hr><hr>
+<h1>Button Toggle</h1>
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle value="bold">Bold</mat-button-toggle>
+  <mat-button-toggle value="italic">Italic</mat-button-toggle>
+  <mat-button-toggle value="underline">Underline</mat-button-toggle>
+</mat-button-toggle-group>
+
+<hr><hr>
+
+<h1>Badge</h1>
+<div class="demo-section">
+    Button toggles badge visibility
+    <button matButton="elevated" matBadge="7" [matBadgeHidden]="hiddenn" (click)="toggleBadgeVisibility()">
+        Hide
+    </button>
+  </div>
+
+<div class="demo-section">
+  Icon with a badge
+  <mat-icon matBadge="15">home</mat-icon>
+    <!-- Include text description of the icon's meaning for screen-readers -->
+    <span class="cdk-visually-hidden">
+      Example with a home icon with overlaid badge showing the number 15
+    </span>
+</div>
+
+<hr/><hr>
