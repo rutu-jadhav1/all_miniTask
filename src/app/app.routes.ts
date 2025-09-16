@@ -5,6 +5,7 @@ import { NavbarComponent } from './component/navbar-component/navbar-component';
 import { StudentListComponent } from './component/student-list-component/student-list-component';
 import { MaterialComponent } from './component/material-component/material-component';
 import { MaterialComponent2 } from './component/material-component2/material-component2';
+import { MaterialComponent3 } from './component/material-component3/material-component3';
 
 export const routes: Routes = [
 
@@ -36,6 +37,10 @@ export const routes: Routes = [
                     {
                         path:'materialComponent2',
                         component: MaterialComponent2
+                    },
+                    {
+                        path:'materialComponent3',
+                        component: MaterialComponent3
                     }
                 ]
     }
